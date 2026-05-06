@@ -1,0 +1,800 @@
+/* ===================== KKRS SANGHA STYLESHEET ===================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap');
+
+:root {
+  --green-dark: #1a5c2a;
+  --green-mid:  #2e7d32;
+  --green-light:#4caf50;
+  --gold:       #b8860b;
+  --gold-light: #d4a017;
+  --cream:      #fdf8f0;
+  --text-dark:  #1a1a1a;
+  --text-body:  #333333;
+  --border:     #d0c8b0;
+  --white:      #ffffff;
+  --blue-nav:   #1c3a6b;
+  --blue-hover: #2a4f8f;
+  --shadow:     0 2px 12px rgba(0,0,0,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', 'Noto Sans Kannada', sans-serif;
+  font-size: 16px;
+  color: var(--text-body);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+/* ===================== HEADER ===================== */
+.site-header {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, #3a8a3e 100%);
+  padding: 0;
+  border-bottom: 4px solid var(--gold);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 20px;
+}
+
+.header-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  object-fit: contain;
+  background: white;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.header-logo-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--green-dark);
+  font-weight: 700;
+  text-align: center;
+  padding: 8px;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title-kn {
+  font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.header-title-en {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.header-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+.header-reg {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  background: var(--blue-nav);
+  border-bottom: 3px solid var(--gold);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0 16px;
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 13px 22px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--blue-hover);
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+/* Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+  gap: 5px;
+}
+
+.nav-dropdown-toggle::after {
+  content: '▾';
+  font-size: 0.7rem;
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--blue-nav);
+  min-width: 160px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  border-top: 2px solid var(--gold);
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 11px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: background 0.15s;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--blue-hover);
+  color: var(--gold-light);
+}
+
+/* ===================== MAIN CONTENT ===================== */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+
+/* ===================== HERO SECTION ===================== */
+.hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, #2a6e30 50%, var(--green-mid) 100%);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.hero::before {
+  content: '✝';
+  position: absolute;
+  font-size: 180px;
+  right: -20px;
+  top: -20px;
+  opacity: 0.05;
+  color: white;
+}
+
+.hero-headline {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.hero-intro {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+  opacity: 0.92;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--white);
+  padding: 12px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--gold);
+  transition: all 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--gold-light);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  padding: 12px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ===================== SECTIONS ===================== */
+.section-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--gold);
+  display: inline-block;
+}
+
+.section-title.kn {
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  margin-top: 4px;
+}
+
+/* ===================== ABOUT SNIPPET ===================== */
+.about-snippet {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green-mid);
+  padding: 32px 36px;
+  border-radius: 2px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow);
+}
+
+.about-snippet p { margin-bottom: 16px; line-height: 1.75; }
+.about-snippet p:last-child { margin-bottom: 0; }
+
+/* Vision / Mission cards */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--green-mid);
+  padding: 24px 26px;
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+}
+
+.card p { font-size: 0.93rem; line-height: 1.65; color: #444; }
+
+/* ===================== EVENTS ===================== */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+  .events-grid { grid-template-columns: 1fr; }
+}
+
+.events-box {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.events-box h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.events-box ul { list-style: none; padding: 0; }
+
+.events-box ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0ece0;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.events-box ul li::before {
+  content: '▪';
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.badge-new {
+  background: #e53935;
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+
+/* ===================== MEMBERS ===================== */
+.members-section {
+  background: var(--green-dark);
+  color: white;
+  padding: 36px 40px;
+  margin-bottom: 40px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.members-stat {
+  text-align: center;
+  min-width: 120px;
+}
+
+.members-stat .number {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.members-stat .label {
+  font-size: 0.82rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.members-info { flex: 1; min-width: 260px; }
+
+.members-info h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--gold-light);
+}
+
+.members-info p { font-size: 0.92rem; line-height: 1.7; opacity: 0.9; margin-bottom: 8px; }
+
+/* ===================== GALLERY ===================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.gallery-item {
+  background: #e8e0cc;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+  padding: 16px;
+  border-radius: 2px;
+}
+
+.gallery-item .ph-icon { font-size: 2rem; margin-bottom: 6px; opacity: 0.5; }
+
+/* ===================== OFFICE BEARERS ===================== */
+.bearers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.bearers-table th {
+  background: var(--green-dark);
+  color: white;
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+}
+
+.bearers-table td {
+  padding: 11px 18px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.92rem;
+}
+
+.bearers-table tr:last-child td { border-bottom: none; }
+.bearers-table tr:nth-child(even) td { background: #faf6ee; }
+
+/* ===================== CONTACT SECTION ===================== */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+  .contact-wrapper { grid-template-columns: 1fr; }
+}
+
+.contact-box {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.contact-box h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+
+.contact-item .icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--green-mid);
+}
+
+.contact-item .text { font-size: 0.92rem; line-height: 1.5; }
+.contact-item .text strong { display: block; color: var(--text-dark); margin-bottom: 2px; }
+
+.contact-note {
+  background: #f5f0e5;
+  border-left: 3px solid var(--gold);
+  padding: 12px 16px;
+  font-size: 0.87rem;
+  color: #555;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* Map placeholder */
+.map-placeholder {
+  background: #e8e4d8;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #888;
+  border: 1px dashed var(--border);
+  border-radius: 2px;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.map-placeholder .ph-icon { font-size: 2rem; opacity: 0.4; }
+
+/* ===================== ABOUT PAGE ===================== */
+.about-hero {
+  background: linear-gradient(135deg, var(--green-dark), #2a6e30);
+  color: white;
+  padding: 48px 40px;
+  margin-bottom: 36px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--gold-light);
+}
+
+.about-hero p { font-size: 1.05rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+.about-section {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 32px 36px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+.about-section h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.45rem;
+  color: var(--green-dark);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-section p {
+  line-height: 1.78;
+  color: #3a3a3a;
+  margin-bottom: 14px;
+}
+
+.about-section p:last-child { margin-bottom: 0; }
+
+/* Future Plans list */
+.plans-list {
+  list-style: none;
+  padding: 0;
+}
+
+.plans-list li {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green-mid);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  background: #faf8f2;
+  border-radius: 0 2px 2px 0;
+}
+
+.plans-list li h4 {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--green-dark);
+  margin-bottom: 6px;
+  font-size: 0.98rem;
+}
+
+.plans-list li p { font-size: 0.91rem; color: #555; line-height: 1.65; margin: 0; }
+
+.closing-note {
+  background: var(--green-dark);
+  color: white;
+  padding: 24px 30px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* ===================== FOOTER ===================== */
+.site-footer {
+  background: var(--green-dark);
+  color: rgba(255,255,255,0.85);
+  padding: 0;
+  border-top: 4px solid var(--gold);
+  margin-top: 20px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-logo-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: var(--green-dark);
+  font-weight: 700;
+  text-align: center;
+  padding: 5px;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.footer-org-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.footer-org-sub {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.footer-contact {
+  flex: 1;
+  min-width: 240px;
+}
+
+.footer-contact p {
+  font-size: 0.82rem;
+  margin-bottom: 5px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.footer-contact span.label {
+  color: var(--gold-light);
+  font-weight: 600;
+  min-width: 70px;
+}
+
+.footer-bottom {
+  background: rgba(0,0,0,0.25);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold-light); }
+
+/* ===================== UTILITIES ===================== */
+.mb-40 { margin-bottom: 40px; }
+.mb-28 { margin-bottom: 28px; }
+.mt-8  { margin-top: 8px; }
+
+.kn-text {
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .header-inner { padding: 10px 14px; }
+  .header-title-kn { font-size: 1.45rem; }
+  .header-title-en { font-size: 0.95rem; letter-spacing: 2px; }
+  .hero { padding: 40px 20px; }
+  .hero-headline { font-size: 1.7rem; }
+  .navbar-inner { flex-wrap: wrap; }
+  .nav-link { padding: 10px 14px; font-size: 0.82rem; }
+  .about-snippet { padding: 20px; }
+  .members-section { padding: 24px 20px; }
+  .footer-inner { gap: 20px; }
+  .footer-bottom { flex-direction: column; gap: 4px; }
+  .page-wrapper { padding: 20px 14px 40px; }
+  .about-section { padding: 22px 20px; }
+  .about-hero { padding: 30px 20px; }
+  .about-hero h1 { font-size: 1.6rem; }
+  .contact-box { padding: 20px; }
+}
